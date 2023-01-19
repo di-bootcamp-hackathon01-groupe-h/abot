@@ -32,8 +32,7 @@ function talk() {
   if (user in know) {
     document.getElementById("chatLog").innerHTML = know[user] + "<br>";
   } else {
-    document.getElementById("chatLog").innerHTML =
-      "Je ne comprends pas tout parce que je suis un robot.<br><br><b>Utilisez d'abord une majuscule.<b><br> Cela m'aidera à vous comprendre."; // defualt
+    document.getElementById("chatLog").innerHTML ="Je ne comprends pas tout parce que je suis un robot.<br><br><b>Utilisez d'abord une majuscule.<b><br> Cela m'aidera à vous comprendre."; // defualt
   }
 }
 
@@ -62,8 +61,6 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
   document.getElementById("f").style.display = "block";
- 
-  
 }
 
 // AUTO TYPE.........
@@ -114,10 +111,14 @@ TxtType.prototype.tick = function () {
 window.onpageshow = function () {
   let elements = document.getElementsByClassName("typewrite");
   for (let i = 0; i < elements.length; i++) {
-    let toRotate = elements[i].getAttribute("data-type");
+    let toRotate = [
+      "Salut, Je suis Abot.", 
+      "Je suis là pour vous aider.", 
+      "Vous pouvez commencer avec juste « Bonjour »."
+    ];
     let period = elements[i].getAttribute("data-period");
     if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
+      new TxtType(elements[i], toRotate, period);
     }
   }
   // INJECT CSS
