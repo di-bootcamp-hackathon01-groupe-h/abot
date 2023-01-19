@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Chatbot" />
+    <meta name="description" content="A Chat Bot for developers." />
+    <meta name="author" content="AhsanParadise" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./assets/img/icon.png" rel="icon" />
+    <title>ABot - Vous êtes présents même quand vous n'êtes pas là</title>
+    <!---Links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body onload="myLoader()" style="margin: 0;">
+    <!-- Begin: Preloader -->
+    <div id="loader">
+        <!--Preloader spinner-->
+        <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- End: Preloader -->
+
+    <!-- Begin: Content container -->
+    <div style="display: none;" id="myDiv" class="animate-bottom">
+        <!--Auto Type Starts-->
+        <h1 class="auto">
+            <a href="" class="typewrite" data-period="2000"
+                data-type='[ "Salut, Je suis Abot.", "Je suis là pour t&quot;aider.", "Demande-moi tout ce que tu veux savoir.", "Tu peux commencer avec juste &laquo;Bonjour&raquo;." ]'>
+                <span class="wrap"></span>
+            </a>
+        </h1>
+        <!--Colorful font-->
+        <div class="up">
+            <h1>ABOT !</h1>
+        </div>
+        <!--Button pop up-->
+        <button class="open-button" onclick="openForm()">Chat</button>
+
+        <!-- Begin: Chat zone -->
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <label for="msg"><b>Message</b></label>
+                <textarea placeholder="Ton message... " title="Appuie sur [Entrée]" name="msg" id="userBox"
+                    type="text" onkeydown="if (event.keyCode == 13) {talk()}"></textarea>
+                <div class="moon" id="chatLog">
+                    <p class="kane"><i class="fa fa-refresh fa-spin"></i></p>
+                </div>
+
+                <button type="button" class="btn cancel" onclick="closeForm()">
+                    Fermer
+                </button>
+            </form>
+        </div>
+        <!-- End: CHat zone -->
+
+        <!-- Begin: Password generator -->
+        <div class="inputBox">
+            <h2>Besoin d'un mot de passe ?</h2>
+            <input type="text" name="" placeholder="Créer un mdp sécurisé" id="password" readonly="" />
+            <div id="btn" class="bubbly-button" onclick="getPassword()">
+                Obtenir le mot de passe
+            </div>
+        </div>
+        <!-- End: Password generator -->
+
+    </div>
+    <!-- End: Content container -->
+
+    <!-- Begin: Footer -->
+    <footer id="f" style="display: none;">
+        <b>Copyright &copy; 2023</b> - DI Bootcamp - Hackathon 01 - Groupe H
+    </footer>
+    <!-- End: Footer -->
+
+    <!--Js-->
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
