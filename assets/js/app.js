@@ -10,7 +10,7 @@ function openForm() {
     document.getElementById("myForm").style.display = "none";
   }
   
-  // Chat with Bot.....
+  // Chat with Bot....
   
   know = {
     "Hello": "Hi, Sir. Good to see you.",
