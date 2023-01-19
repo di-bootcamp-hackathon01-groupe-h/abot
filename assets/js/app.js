@@ -16,8 +16,9 @@ let questions;
 fetch('../../dataset/questions.json')
   .then(response => response.json())
   .then(data => { 
-    dataset = data.none; 
-    questions = dataset.questions
+    dataset = data.none;
+    questions = dataset.questions.concat(data.sante.questions); 
+    dataset.answers = dataset.answers.concat(data.sante.answers);
   })
   .catch(error => alert(`Impossible de recuperer la liste des question : ${error}`));
 
