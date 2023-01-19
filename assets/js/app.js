@@ -1,6 +1,4 @@
-// =========== G O O D  L U C K ============== //
-
-// Open or Close the chat button...
+// Ouvrir ou fermer le bouton de chat...
 
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -10,21 +8,20 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-// Chat with Bot....
+// Echanger avec Bot....
 
 know = {
-  "Hello": "Hi, Sir. Good to see you.",
-  "What is your name?": "MOGA",
-  "Who are you?": "<b>I am a Chat Bot who created by Jayed Ahsan Saad.</b>",
+  "Bonjour": "Bonjour Monsieur. Content de vous voir.",
+  "Quel est votre nom?": "MOGA",
+  "Qui êtes-vous?": "<b>Je suis un Chat Bot créé par Groupe-H.</b>",
   "Damm": "you bullshit.",
-  "Tell me something": "I can't do it.",
-  "Lol": "Don't use this one. I'll kick your butt.",
-  "Hi": "Hello World! Nice to meet you.",
-  "XD": "You think yourself smarter than me.",
-  "I am a human":
-    "Human have emotions. It is hard to understand. But I have dream to buy a bike.",
-  "Thank you": "No need.",
-  "This is bs": "I will make you red.",
+  "Dis moi quelque chose": "je ne peux pas le faire.",
+  "Lol": "N'utilisez pas celui-ci. je vais te botter les fesses.",
+  "Salut": "Bonjour le monde! Ravi de vous rencontrer.",
+  "XD": "Tu te crois plus intelligent que moi.",
+  "Je suis un humain":"L'humain a des émotions. C'est difficile à comprendre. Mais je rêve d'acheter un vélo.",
+  "Merci": "Ce n'est pas nécessaire.",
+  "C'est bs": "je te rendrai rouge.",
 };
 
 function talk() {
@@ -35,16 +32,15 @@ function talk() {
   if (user in know) {
     document.getElementById("chatLog").innerHTML = know[user] + "<br>";
   } else {
-    document.getElementById("chatLog").innerHTML =
-      "I don't understand everything because I am a robot.<br><br><b>Use capital letter at first.<b><br> It will help me to understad you."; // defualt
+    document.getElementById("chatLog").innerHTML ="Je ne comprends pas tout parce que je suis un robot.<br><br><b>Utilisez d'abord une majuscule.<b><br> Cela m'aidera à vous comprendre."; // defualt
   }
 }
-// Random Password.......
 
+// Random Password.......
 function getPassword() {
   let chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIZKLOPWXYZ";
   let passwordLength = 14;
-  let password = "";
+  let  password = "";
 
   for (let i = 0; i < passwordLength; i++) {
     let randomNumber = Math.floor(Math.random() * chars.length);
@@ -65,8 +61,6 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
   document.getElementById("f").style.display = "block";
-
-
 }
 
 // AUTO TYPE.........
