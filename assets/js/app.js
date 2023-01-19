@@ -119,7 +119,7 @@ function talk() {
     if(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.test(user)) { // L'utilisateur a selectionne une date
       responseBox.innerHTML = "Votre rendez-vous a bien été programmé !<br>";
     } else {
-      responseBox.innerHTML = "Je ne comprends pas tout parce que je suis un robot.<br><br><b>Utilisez d'abord une majuscule.<b><br> Cela m'aidera à vous comprendre."; // defualt
+      responseBox.innerHTML = "Désolé, je n'ai pas compris votre question. Pourriez-vous la reformuler svp ?<br><b>"; // defualt
       // Clear response zone after 5s
       timer = setTimeout(() => {
         responseBox.innerHTML = '<p class="kane"><i class="fa fa-refresh fa-spin"></i></p>';
