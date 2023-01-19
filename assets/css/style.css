@@ -477,3 +477,18 @@ body {
   }
 }
 /* The End */
+#calendar{
+  margin: 2rem 2rem 0 0;
+}
+#calendar table{
+  min-width: 400px;
+  border-collapse: collapse;
+}
+#calendar table th, #calendar table td{
+  border: 1px solid #c3c3c3;
+  padding: 8px 0;
+}
+#calendar table td {
+  color: #3149d4;
+  cursor: pointer;
+}
