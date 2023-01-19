@@ -24,7 +24,8 @@
 			[
 				"Salut ! En quoi puis-je vous aider ?",
 				"Bonjour, bienvenue ! Que puis-je faire pour vous aujourd'hui ?",
-				"Salut !"
+				"Salut !",
+				"Bonjour, comment allez-vous aujourd'hui ?"
 			],
 			[
 				"Je vais bien. Et vous ?"
@@ -40,12 +41,40 @@
 	"sante": {
 		"questions": [
 			[
-				""
+				"je voudrais consulter un medecin",
+				"je veux voir un medecin",
+				"consultation"
+			], [
+				"mal, fievre, frissons, mal de ventre, nausees",
+				"je vais assez mal, j'ai de la fievre et des frissons depuis hier soir.",
+				"diarrhee, sueurs, douleurs musculaires, toux, maux d'estomac"
+			], [
+				"mal a la tete",
+				"mal de tete",
+				"nausees",
+				"oui, j'ai mal à la tete et des nausees.",
+				"oui"
+			], [
+				"ecoulement de pus jaune, ecoulement de vert du nez, cephalees, pression au niveau du visage, douleur au niveau du visage, congestion du nez, obstruction du nez, sensibilité au toucher, tumefaction du sinus affecte,, odorat diminue hyposmie, mauvaise haleine halitose, toux productive"
+			], [
+				"fièvre fatigue frissons mal de gorge maux de tête douleurs articulaires douleurs musculaires l'enflure de glandes ganglions lymphatiques"
+			], [
+				"toux persistante  s'accompagne parfois de sang toux s'accompagne parfois de sang douleurs thoraciques faiblesses fatigue perte de poids perte d'appétit frissons fièvre sueurs nocturnes"
 			]
 		],
 		"answers": [
 			[
-
+				"Qu'avez-vous ?"
+			], [
+				"D'accord, cela peut être un signe de paludisme. Avez-vous des maux de tête, des vomissements ou des douleurs abdominales ?"
+			], [
+				"Très bien, vous allez devoir faire une prise de sang pour vérifier si vous avez le paludisme. Veuillez prendre un rendez-vous. Nous avons des Médecins disponibles, veuillez sélectionner une date : [popup-calendar]"
+			], [
+				"D'accord, cela peut être un signe de sinusite. Vous allez devoir passer chez un Médecin pour la suite. Veuillez prendre un rendez-vous. Nous avons des Médecins disponibles, veuillez sélectionner une date : [popup-calendar]"
+			], [
+				"D'accord, cela peut être un signe d'infection au VIH/SIDA. Vous allez devoir faire un test de dépistage pour vérifier si c'est bien le cas. Veuillez prendre un rendez-vous. Nous avons des Médecins disponibles, veuillez sélectionner une date : [popup-calendar]"
+			], [
+				"D'accord, cela peut être un signe de tuberculose. Vous allez devoir passer chez un Médecin pour la suite. Veuillez prendre un rendez-vous. Nous avons des Médecins disponibles, veuillez sélectionner une date : [popup-calendar]"
 			]
 		]
 	},
