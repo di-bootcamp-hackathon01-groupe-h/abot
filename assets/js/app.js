@@ -3,130 +3,133 @@
 // Open or Close the chat button...
 
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+// Chat with Bot....
+
+know = {
+  "Hello": "Hi, Sir. Good to see you.",
+  "What is your name?": "MOGA",
+  "Who are you?": "<b>I am a Chat Bot who created by Jayed Ahsan Saad.</b>",
+  "Damm": "you bullshit.",
+  "Tell me something": "I can't do it.",
+  "Lol": "Don't use this one. I'll kick your butt.",
+  "Hi": "Hello World! Nice to meet you.",
+  "XD": "You think yourself smarter than me.",
+  "I am a human":
+    "Human have emotions. It is hard to understand. But I have dream to buy a bike.",
+  "Thank you": "No need.",
+  "This is bs": "I will make you red.",
+};
+
+function talk() {
+  let user = document.getElementById("userBox").value;
+  document.getElementById("userBox").value = "";
+  document.getElementById("chatLog").innerHTML = user + "<br>";
+
+  if (user in know) {
+    document.getElementById("chatLog").innerHTML = know[user] + "<br>";
+  } else {
+    document.getElementById("chatLog").innerHTML =
+      "I don't understand everything because I am a robot.<br><br><b>Use capital letter at first.<b><br> It will help me to understad you."; // defualt
   }
-  
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+}
+// Random Password.......
+
+function getPassword() {
+  let chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIZKLOPWXYZ";
+  let passwordLength = 14;
+  let password = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+    let randomNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randomNumber, randomNumber + 1);
   }
-  
-  // Chat with Bot....
-  
-  know = {
-    "Hello": "Hi, Sir. Good to see you.",
-    "What is your name?": "MOGA",
-    "Who are you?": "<b>I am a Chat Bot who created by Jayed Ahsan Saad.</b>",
-    "Damm": "you bullshit.",
-    "Tell me something": "I can't do it.",
-    "Lol": "Don't use this one. I'll kick your butt.",
-    "Hi": "Hello World! Nice to meet you.",
-    "XD": "You think yourself smarter than me.",
-    "I am a human":
-      "Human have emotions. It is hard to understand. But I have dream to buy a bike.",
-    "Thank you": "No need.",
-    "This is bs": "I will make you red.",
-  };
-  
-  function talk() {
-    let user = document.getElementById("userBox").value;
-    document.getElementById("userBox").value = "";
-    document.getElementById("chatLog").innerHTML = user + "<br>";
-  
-    if (user in know) {
-      document.getElementById("chatLog").innerHTML = know[user] + "<br>";
-    } else {
-      document.getElementById("chatLog").innerHTML =
-        "I don't understand everything because I am a robot.<br><br><b>Use capital letter at first.<b><br> It will help me to understad you."; // defualt
-    }
+  document.getElementById("password").value = password;
+}
+
+// Preloader....
+
+let myVariable;
+
+function myLoader() {
+  myVariable = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.getElementById("f").style.display = "block";
+
+
+}
+
+// AUTO TYPE.........
+
+let TxtType = function (el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = "";
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function () {
+  let i = this.loopNum % this.toRotate.length;
+  let fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
-  // Random Password.......
-  
-  function getPassword() {
-    let chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIZKLOPWXYZ";
-    let passwordLength = 14;
-    let  password = "";
-  
-    for (let i = 0; i < passwordLength; i++) {
-      let randomNumber = Math.floor(Math.random() * chars.length);
-      password += chars.substring(randomNumber, randomNumber + 1);
-    }
-    document.getElementById("password").value = password;
+
+  this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+  let that = this;
+  let delta = 200 - Math.random() * 100;
+
+  if (this.isDeleting) {
+    delta /= 2;
   }
-  
-  // Preloader....
-  
-  let myVariable;
-  
-  function myLoader() {
-    myVariable = setTimeout(showPage, 3000);
-  }
-  
-  function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-    document.getElementById("f").style.display = "block";
-   
-    
-  }
-  
-  // AUTO TYPE.........
-  
-  let TxtType = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = "";
-    this.tick();
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === "") {
     this.isDeleting = false;
-  };
-  
-  TxtType.prototype.tick = function () {
-    let i = this.loopNum % this.toRotate.length;
-    let fullTxt = this.toRotate[i];
-  
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function () {
+    that.tick();
+  }, delta);
+};
+
+window.onpageshow = function () {
+  let elements = document.getElementsByClassName("typewrite");
+  for (let i = 0; i < elements.length; i++) {
+    let toRotate = [
+      "Salut, Je suis Abot.", 
+      "Je suis là pour vous aider.", 
+      "Vous pouvez commencer avec juste « Bonjour »."
+    ];
+    let period = elements[i].getAttribute("data-period");
+    if (toRotate) {
+      new TxtType(elements[i], toRotate, period);
     }
-  
-    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-  
-    let that = this;
-    let delta = 200 - Math.random() * 100;
-  
-    if (this.isDeleting) {
-      delta /= 2;
-    }
-  
-    if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-    }
-  
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
-  
-  window.onpageshow = function () {
-    let elements = document.getElementsByClassName("typewrite");
-    for (let i = 0; i < elements.length; i++) {
-      let toRotate = elements[i].getAttribute("data-type");
-      let period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-    // INJECT CSS
-    let css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.10em solid skyblue}";
-    document.body.appendChild(css);
-  };
-  
+  }
+  // INJECT CSS
+  let css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.10em solid skyblue}";
+  document.body.appendChild(css);
+};
