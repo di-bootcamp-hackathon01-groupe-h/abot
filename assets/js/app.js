@@ -8,31 +8,51 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-// Echanger avec Bot....
+// Echange avec ABot....
 
-know = {
-  "Bonjour": "Bonjour Monsieur. Content de vous voir.",
-  "Quel est votre nom?": "MOGA",
-  "Qui êtes-vous?": "<b>Je suis un Chat Bot créé par Groupe-H.</b>",
-  "Damm": "you bullshit.",
-  "Dis moi quelque chose": "je ne peux pas le faire.",
-  "Lol": "N'utilisez pas celui-ci. je vais te botter les fesses.",
-  "Salut": "Bonjour le monde! Ravi de vous rencontrer.",
-  "XD": "Tu te crois plus intelligent que moi.",
-  "Je suis un humain":"L'humain a des émotions. C'est difficile à comprendre. Mais je rêve d'acheter un vélo.",
-  "Merci": "Ce n'est pas nécessaire.",
-  "C'est bs": "je te rendrai rouge.",
-};
+let dataset;
+let questions;
+
+fetch('../../dataset/questions.json')
+  .then(response => response.json())
+  .then(data => { 
+    dataset = data.none; 
+    questions = dataset.questions
+  })
+  .catch(error => alert(`Impossible de recuperer la liste des question : ${error}`));
+
+let timer;
 
 function talk() {
-  let user = document.getElementById("userBox").value;
-  document.getElementById("userBox").value = "";
-  document.getElementById("chatLog").innerHTML = user + "<br>";
-
-  if (user in know) {
-    document.getElementById("chatLog").innerHTML = know[user] + "<br>";
-  } else {
-    document.getElementById("chatLog").innerHTML ="Je ne comprends pas tout parce que je suis un robot.<br><br><b>Utilisez d'abord une majuscule.<b><br> Cela m'aidera à vous comprendre."; // defualt
+  let inputBox = document.getElementById("userBox");
+  let oldText = inputBox.value;
+  let user = oldText.trim().toLowerCase();
+  inputBox.placeholder = oldText;
+  inputBox.value = "";
+  let responseBox = document.getElementById("chatLog")
+  responseBox.innerHTML = user + "<br>";
+  let questionFound = false;
+  
+  for(let id in questions) {
+    if(questions[id].includes(user)) {
+      let answersGroup = dataset.answers[id]
+      document.getElementById("chatLog").innerHTML = answersGroup[Math.floor(Math.random() * answersGroup.length)] + "<br>";
+      questionFound = true;
+      if(timer != undefined) {
+        clearTimeout(timer)
+      }
+      break;
+    }
+  }
+  
+  if(!questionFound) {
+    document.getElementById("chatLog").innerHTML = "Je ne comprends pas tout parce que je suis un robot.<br><br><b>Utilisez d'abord une majuscule.<b><br> Cela m'aidera à vous comprendre."; // defualt
+    // Clear response zone after 5s
+    timer = setTimeout(() => {
+      responseBox.innerHTML = '<p class="kane"><i class="fa fa-refresh fa-spin"></i></p>';
+      inputBox.placeholder = 'Votre message...'
+      clearTimeout(timer)
+    }, 5000)
   }
 }
 
