@@ -1,0 +1,54 @@
+{
+	"none": {
+		"questions": [
+			[
+				"salut",
+				"bonjour",
+				"bonsoir",
+				"coucou",
+				"hey"
+			],
+			[
+				"comment tu vas",
+				"comment vous allez"
+			],
+			[
+				"quel age as-tu"
+			],
+			[
+				"qui es-tu",
+				"qui t'as créé"
+			]
+		],
+		"answers": [
+			[
+				"Salut ! En quoi puis-je vous aider ?",
+				"Bonjour, bienvenue ! Que puis-je faire pour vous aujourd'hui ?",
+				"Salut !"
+			],
+			[
+				"Je vais bien. Et vous ?"
+			],
+			[
+				"Je ne suis qu'un programme d'ordinateur, Je peux avoir n'importe quel age."
+			],
+			[
+				"Je suis <strong>Abot</strong>, un assistant virtuel créé par un groupe d'étudiants pendant un Hackathon."
+			]
+		]
+	},
+	"sante": {
+		"questions": [
+			[
+				""
+			]
+		],
+		"answers": [
+			[
+
+			]
+		]
+	},
+	"transport": [],
+	"education": []
+}
