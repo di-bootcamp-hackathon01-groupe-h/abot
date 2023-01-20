@@ -70,6 +70,12 @@ function talk() {
     }
   }
 
+  /**
+   * Check if a sentence is likely in a liste of sentence
+   * @param {string[]} sentences list of several sentences
+   * @param {string} sentence the sentence to search
+   * @returns boolean
+   */
   function includeSynonym(sentences, sentence) {
     sentences = sentences.map(s => clean(s));
     sentence = clean(sentence);
@@ -103,6 +109,11 @@ function talk() {
     return sentenceIndex;
   }
 
+  /**
+   * Remove special chars from a string and replace chars with accent with their matching char
+   * @param {string} str the string to clean
+   * @returns string
+   */
   function clean(str) {
     let search = "éàùâôîïöèçê.?,!-".split('')
     let replace = "eauaoiioece     ".split('')
@@ -130,6 +141,10 @@ function talk() {
   }
 }
 
+/**
+ * Build and display a calendar
+ * @param {HTMLElement} wrapper 
+ */
 function showCalendar(wrapper) {
   function createCalendar(year, month) {
     let table = document.createElement('table')
