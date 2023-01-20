@@ -18,7 +18,7 @@ Fonctionnalité de Abot
 Utilisation
 1.	Page d’accueil 
 
-<img href="">
+<img href="./assets/img/read/7.png">
 
 
 
@@ -31,12 +31,12 @@ Utilisation
 2.	Voir la zone de saisir
 Pour voir la zone de saisir, cliquez sur ce bouton :
 
-<img href="">
+<img href="./assets/img/read/1.png">
 
 3.	Saisir son message
 Pour saisir son message, cliquez dans la zone :
 
-<img href="">
+<img href="./assets/img/read/2.png">
 
 
 
@@ -47,14 +47,14 @@ Pour saisir son message, cliquez dans la zone :
 
 La réponse sera disponible ici :
 
-<img href="">
+<img href="./assets/img/read/3.png">
 
 
 
 5.	Fermer les champs de saisir
 Pour fermer le champ de saisir, cliquez ici :
 
-<img href="">
+<img href="./assets/img/read/4.png">
 
 
 
