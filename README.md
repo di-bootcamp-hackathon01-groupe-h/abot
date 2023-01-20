@@ -18,7 +18,7 @@ Fonctionnalité de Abot
 Utilisation
 1.	Page d’accueil 
 
-<img href="./assets/img/read/7.png">
+<img style="width : 300px; height : 300px;" href="https://github.com/di-bootcamp-hackathon01-groupe-h/abot/blob/main/assets/img/read/7.PNG">
 
 
 
@@ -31,12 +31,12 @@ Utilisation
 2.	Voir la zone de saisir
 Pour voir la zone de saisir, cliquez sur ce bouton :
 
-<img href="./assets/img/read/1.png">
+<img style="width : 150px; height : 150px;" href="https://github.com/di-bootcamp-hackathon01-groupe-h/abot/blob/main/assets/img/read/1.PNG">
 
 3.	Saisir son message
 Pour saisir son message, cliquez dans la zone :
 
-<img href="./assets/img/read/2.png">
+<img style="width : 150px; height : 150px;" href="https://github.com/di-bootcamp-hackathon01-groupe-h/abot/blob/main/assets/img/read/2.PNG">
 
 
 
@@ -47,14 +47,14 @@ Pour saisir son message, cliquez dans la zone :
 
 La réponse sera disponible ici :
 
-<img href="./assets/img/read/3.png">
+<img style="width : 150px; height : 150px;" href="https://github.com/di-bootcamp-hackathon01-groupe-h/abot/blob/main/assets/img/read/3.PNG">
 
 
 
 5.	Fermer les champs de saisir
 Pour fermer le champ de saisir, cliquez ici :
 
-<img href="./assets/img/read/4.png">
+<img style="width : 150px; height : 150px;"  href="https://github.com/di-bootcamp-hackathon01-groupe-h/abot/blob/main/assets/img/read/4.PNG">
 
 
 
